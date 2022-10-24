@@ -10,13 +10,14 @@
   <tbody>
     <tr *ngFor="let page of pages">
       <td>
-        {{page.title}}
+        <a target="_blank" [href]="'https://en.wikipedia.org?curid=' + page.pageid">{{page.title}}</a>
       </td>
       <td>
         {{page.wordcount}}
       </td>
-      <td>
-        {{page.snippet}}
+      <!-- //To bind the HTML element from the request -->
+      <td [innerHtml]="page.snippet">
+        <!-- {{page.snippet}} -->
       </td>
     </tr>
   </tbody>
